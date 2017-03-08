@@ -4,9 +4,12 @@
     "type": "library",
     "keywords": ["log", "logmanager", "logfile"],
     "license": "MIT",
-    "require": {
-        "php": ">=5.3.2"
-    },
+    "authors": [
+        {
+            "name": "Le_Futuriste",
+            "email": "contact@lefuturiste.fr"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "LogManager\\": "src"
