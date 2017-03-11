@@ -58,7 +58,7 @@ class Log{
     private function log($level, $msg){
         if (!file_exists($this->config['folder'] . date('Y') . '/' . date('m') . '/' . date('d'))){
 
-            mkdir($this->config['folder'] . date('Y') . '/' . date('m') . '/' . date('d'), 077, true);
+            mkdir($this->config['folder'] . date('Y') . '/' . date('m') . '/' . date('d'), 0777, true);
 
         }
 
