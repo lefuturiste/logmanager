@@ -12,7 +12,7 @@ class Log{
      * @var Config for this class
      */
 	public $config = [
-			"enabled" => true
+			"enabled" => true,
 			"folder" => "log/"
 		];
 
