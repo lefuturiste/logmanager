@@ -40,3 +40,13 @@ $log->warning('Your log warning message');
 
 ```
 
+## 3. Config
+
+The config array can give in instance like :
+```php
+//default config
+[
+  "enabled" => true
+  "folder" => "log/"
+]
+```
