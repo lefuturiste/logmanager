@@ -13,7 +13,8 @@ class Log{
      */
 	public $config = [
 			"enabled" => true,
-			"folder" => "log/"
+			"folder" => "log/",
+			"nginx" => false
 		];
 
     /*
@@ -68,7 +69,7 @@ class Log{
 	        $str =
 	            '[' . $level . '] ' .
 	            '[' . date('Y/m/d H:i:s') . ']' . ' ' .
-	            'From: ' . $_SERVER['REMOTE_ADDR'] . ' --+ ' .
+	            'From: ' . ($this->config['nginx']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'] . ' --+ ' .
 	            $msg .
 	            "\n";
 	        fputs($file, $str);
