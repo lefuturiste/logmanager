@@ -66,12 +66,13 @@ class Log{
 	        }
 
 	        $file = fopen($this->config['folder'] . date('Y') . '/' . date('m') . '/' . date('d') . '/log.log', 'a+');
-	        $str =
-	            '[' . $level . '] ' .
-	            '[' . date('Y/m/d H:i:s') . ']' . ' ' .
-	            'From: ' . ($this->config['nginx']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'] . ' --+ ' .
-	            $msg .
-	            "\n";
+	  	$ip = ($this->config['nginx']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
+		$str =
+		'[' . $level . '] ' .
+		'[' . date('Y/m/d H:i:s') . ']' . ' ' .
+		'From: ' . $ip . ' --+ ' .
+		$msg .
+		"\n";
 	        fputs($file, $str);
 	        fclose($file);
 
